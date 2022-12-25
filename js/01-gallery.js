@@ -1,8 +1,8 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-const galleryRef = document.querySelector(".gallery");
+const galleryEl = document.querySelector(".gallery");
 
-galleryRef.addEventListener("click", onImgClick);
+galleryEl.addEventListener("click", onImgClick);
 
 const markupGallery = galleryItems
   .map(({ preview, original, description }) => {
@@ -19,7 +19,7 @@ const markupGallery = galleryItems
   })
   .join('');
 
-galleryRef.insertAdjacentHTML('beforeend', markupGallery);
+galleryEl.insertAdjacentHTML('beforeend', markupGallery);
 
 function onImgClick(event) {
   event.preventDefault();
@@ -35,7 +35,6 @@ function onImgClick(event) {
 `);
 
   instance.show();
-
   document.addEventListener('keydown', onEscPushClose);
 
   function onEscPushClose(e) {
